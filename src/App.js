@@ -37,19 +37,19 @@ const App = () => {
     if (bounds) {
       setIsLoading(true);
 
-      //   getWeatherData(coords.lat, coords.lng)
-      //     .then((data) => setWeatherData(data));
+        // setWeatherData(coords.lat, coords.lng)
+        //   .then((data) => setWeatherData(data));
 
       
-      // console.log(coordinates, bounds);
-  //     console.log(bounds.sw,bounds.ne);
-  //     getPlaceDetails(type,bounds.sw,bounds.ne)
-  //         .then((data) => {
-  //             console.log(data);
-  //             setPlaces(data?.filter((place)=>place.name && place.num_reviews>0));
-  //                setFilteredPlaces([]);
-  //                 setIsLoading(false);
-  //         });
+      console.log(coords, bounds);
+      console.log(bounds.sw,bounds.ne);
+      getPlaceDetails(type,bounds.sw,bounds.ne)
+          .then((data) => {
+              console.log(data);
+              setPlaces(data?.filter((place)=>place.name && place.num_reviews>0));
+                 setFilteredPlaces([]);
+                  setIsLoading(false);
+          });
     }
   }, [bounds, type]);
 
